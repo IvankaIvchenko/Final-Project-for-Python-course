@@ -120,21 +120,21 @@ class HangmanUI:
 
             self.result_label.config(text=self.format_word(self.game.guessed_word).strip())
             self.draw_hangman()
-            self.update_alphabet_buttons()  # Update alphabet buttons state
+            self.update_alphabet_buttons()  
 
     def show_new_game_button(self):
-        self.canvas.pack_forget()  # Hide hangman canvas
-        self.button_new_game.pack(pady=10)  # Show new game button
+        self.canvas.pack_forget()  
+        self.button_new_game.pack(pady=10) 
 
     def start_new_game(self):
-        self.game.__init__()  # Reset the game
-        self.button_new_game.pack_forget()  # Hide new game button
-        self.canvas.pack(pady=10)  # Show canvas
-        self.canvas.delete("all")  # Clear the canvas at the start of new game
-        self.hide_the_word()  # Reset the guessed word display
-        self.label_info.config(text="Do you accept the Hangman challenge?")  # Reset the label
-        self.reset_alphabet_buttons()  # Reset the alphabet buttons
-        self.create_alphabet_buttons()  # Recreate the alphabet buttons under the canvas
+        self.game.__init__()  
+        self.button_new_game.pack_forget()  
+        self.canvas.pack(pady=10) 
+        self.canvas.delete("all")  
+        self.hide_the_word() 
+        self.label_info.config(text="Do you accept the Hangman challenge?")  
+        self.reset_alphabet_buttons()  
+        self.create_alphabet_buttons() 
 
     def create_alphabet_buttons(self):
         self.alphabet_frame = tk.Frame(self.root)
@@ -163,7 +163,7 @@ class HangmanUI:
 
     def on_alphabet_button_click(self, letter):
         self.guess_letter(letter)
-        self.update_alphabet_buttons()  # Update alphabet buttons state after each click
+        self.update_alphabet_buttons()  
 
     def remove_alphabet_buttons(self):
         for button in self.alphabet_buttons:
